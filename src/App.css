@@ -1,0 +1,204 @@
+/*
+ * I recognize that the css could be improved in many ways 
+ * - Creating specific css for each component
+ * - Not selecting direct child > .something
+ * - Not selecting element by theirs tags
+ * However I also regonize that it is only one page.
+ */
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Alverata";
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+html {
+  box-sizing: border-box;
+  color: #1C2139;
+}
+
+#root {
+  padding: 60px 50px;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+label {
+  display: block;
+  margin-top: 35px;
+}
+
+.App > section:first-child {
+  border-right: 1px #E9EAF4 solid;
+  padding-right: 109px;
+}
+
+.App > section:nth-child(2) {
+  padding-left: 110px;
+}
+
+.App > section {
+  min-height: calc(100vh - 120px);
+  width: 50%;
+}
+
+.label-text {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+
+.error-message {
+  color: #D0021B;
+  font-size: 14px;
+}
+
+form input {
+  width: 100%;
+  border: 0px;
+  padding: 15px 0px;
+  font-size: 20px;
+  border-bottom: 2px solid #D6D7DE;
+}
+
+form input:focus {
+  outline: none;
+  border-bottom-color: #4B3CFA;
+}
+
+form .field-error input {
+  border-bottom-color: #D0021B;
+}
+
+form button {
+  width: 100%;
+  padding: 15px;
+  border: 0px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #4B3CFA;
+  cursor: pointer;
+  outline: none;
+
+  margin-top: 30px;
+}
+
+.label-inside-input {
+  display: block;
+  position: relative;
+}
+
+.label-inside-input span {
+  display: block;
+  position: absolute;
+  bottom: 16px;
+  font-size: 20px;
+}
+
+.label-inside-input input {
+  padding-left: 18px;
+}
+
+.information {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  text-align: center;
+}
+
+.information > span {
+  flex: 1;
+}
+
+.transactions ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.transactions ul li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 14px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #D6D7DE;
+}
+.transactions ul li:last-child {
+  border-bottom: 0px;
+}
+
+.transactions ul li > span:first-child {
+  flex: 1;
+}
+
+.transactions .name {
+  font-size: 16px;
+}
+
+.transactions .email {
+  font-size: 12px;
+  color: #4A4A4A;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+
+@media only screen and (max-device-width : 1024px) {
+  .App > section:first-child {
+    padding-right: 50px;
+  }  
+
+  .App > section:nth-child(2) {
+    padding-left: 50px;
+  }  
+}
+
+@media only screen and (max-device-width : 768px) {
+  #root {
+    padding: 1.8em;
+  }
+
+  .App {
+    flex-direction: column;
+  }
+
+  .App > section {
+    width: 100%;
+  }
+
+  #root .App > section:first-child {
+    border: 0px;
+    padding: 0px;
+  }
+}

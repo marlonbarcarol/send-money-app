@@ -1,0 +1,1 @@
+Please run `npm install` and `npm start` within the project folder.
